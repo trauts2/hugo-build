@@ -10,5 +10,6 @@ RUN set -x && \
   wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY}.tar.gz && \
   tar xzf ${HUGO_BINARY}.tar.gz && \
   rm -r ${HUGO_BINARY}.tar.gz && \
+  mv hugo /usr/bin && \
   apk del wget ca-certificates && \
   rm /var/cache/apk/*
