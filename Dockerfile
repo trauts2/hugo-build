@@ -2,7 +2,7 @@ FROM alpine:3.5
 MAINTAINER tilldettmering@gmail.com
 
 ENV HUGO_VERSION 0.44
-ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 # Install HUGO
 RUN set -x && \
