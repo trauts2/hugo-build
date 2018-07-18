@@ -7,7 +7,9 @@ ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 ENV GLIBC_VERSION 2.23-r3
 
 RUN set -x && \
-  apk add --update wget ca-certificates
+  apk add --update wget ca-certificates libstdc++
+
+# Install glibc
 
 RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub \
 &&  wget "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/$GLIBC_VERSION/glibc-$GLIBC_VERSION.apk" \
@@ -21,6 +23,7 @@ RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/
 &&  rm "glibc-i18n-$GLIBC_VERSION.apk"
 
 # Install HUGO
+
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
   tar xzf ${HUGO_BINARY} && \
   rm -r ${HUGO_BINARY} && \
