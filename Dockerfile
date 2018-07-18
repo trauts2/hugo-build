@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.8
 MAINTAINER tilldettmering@gmail.com
 
 ENV HUGO_VERSION 0.44
