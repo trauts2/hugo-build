@@ -1,7 +1,7 @@
 FROM alpine:3.8
 MAINTAINER tilldettmering@gmail.com
 
-ENV HUGO_VERSION 0.45
+ENV HUGO_VERSION 0.45.1
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 ENV GLIBC_VERSION 2.27-r0
