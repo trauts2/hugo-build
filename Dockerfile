@@ -9,7 +9,7 @@ ENV GLIBC_VERSION 2.27-r0
 RUN set -x && \
   apk add --update wget ca-certificates libstdc++
 
-# Install glibc
+# Install glibc: This is required for HUGO-extended (including SASS) to work.
 
 RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub \
 &&  wget "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/$GLIBC_VERSION/glibc-$GLIBC_VERSION.apk" \
